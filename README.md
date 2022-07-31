@@ -14,3 +14,15 @@ O Prolog é uma linguagem declarativa, ou seja, não é especificado passo a pas
 Além de ser uma linguagem declarativa, outro fato que a diferencia de outras linguagens é que ela não possui as estruturas de controle (if-else, do-while, for, switch) que existem na maioria das linguagens de programação. Para fazer isso, usamos a lógica para declarar como você deve atingir seus objetivos.
 
 Os programas em Prolog podem ser executados de forma interativa e os usuários podem formular consultas usando fatos e regras, resultando em soluções por meio de um mecanismo unificado.
+
+## Tipos de dados 
+Os tipos de dados comuns em outras linguagens não são usados no Prolog. Todos os dados são tratados como um único tipo, chamado de termo, que pode ser uma constante, variável ou termo composto.
+
+- Fatos 
+ Em Prolog são fornecidos os fatos e as regras para uma base de dados, que posteriormente serão executadas consultas (queries) em cima da base de dados.
+ 
+ 
+A estrutura de um fato é formada por um predicado, seus argumentos e com um ponto(.) para finzalizar a instrução seria como ponto-vírgula das linguagens comuns de programação
+```
+predicado(argumento1,argumento2...).
+```

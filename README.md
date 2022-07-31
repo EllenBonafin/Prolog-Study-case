@@ -18,11 +18,26 @@ Os programas em Prolog podem ser executados de forma interativa e os usuários p
 ## Tipos de dados 
 Os tipos de dados comuns em outras linguagens não são usados no Prolog. Todos os dados são tratados como um único tipo, chamado de termo, que pode ser uma constante, variável ou termo composto.
 
-- Fatos 
+- FATOS<br>
  Em Prolog são fornecidos os fatos e as regras para uma base de dados, que posteriormente serão executadas consultas (queries) em cima da base de dados.
  
  
-A estrutura de um fato é formada por um predicado, seus argumentos e com um ponto(.) para finzalizar a instrução seria como ponto-vírgula das linguagens comuns de programação
+A estrutura de um fato é formada por um `predicado`, seus `argumentos` e com um ponto`(.)` para finzalizar a instrução seria como ponto-vírgula das linguagens comuns de programação
 ```
 predicado(argumento1,argumento2...).
+
+Ex: Cidade(Cascavel)
 ```
+- QUESTOES<br>
+Questão é um fato antecedido de um ponto de interrogação ou o comando apropriado para o tipo de compilador.<br>
+
+```
+Por exemplo: ?-Cidade(cascavel).
+```
+A partir de uma questão feita o Prolog realiza uma busca procurando por uma ocorrencia que seja igual a questão e retornando assim `YES` ou `NO`
+
+- VARIAVEIS<br>
+No Prolog as variareis são tratadas como incógnitas das quais o valor é desconhecido, portando devemos instanciar um objeto a essa variável e a mesma não poderá ser mais modificada
+
+
+

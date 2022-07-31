@@ -43,7 +43,9 @@ No Prolog as variareis são tratadas como incógnitas das quais o valor é desco
 
 - LISTAS<br>
 
+
 - ÁTOMOS<br>
+Constantes de texto são introduzidas usando átomos. Um átomo é uma sequência consistindo de letras, sublinhados e sublinhados , mas começando com uma letra minúscula. Se um átomo não alfanumérico for necessário, qualquer sequência de aspas simples pode ser usada.
 
 
 

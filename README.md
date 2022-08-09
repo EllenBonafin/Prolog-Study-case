@@ -42,7 +42,20 @@ A partir de uma questão feita o Prolog realiza uma busca procurando por uma oco
 No Prolog as variareis são tratadas como incógnitas das quais o valor é desconhecido, portando devemos instanciar um objeto a essa variável e a mesma não poderá ser mais modificada
 
 - LISTAS<br>
+Uma lista é uma sequência finita de elementos. Ex.:
 
+```
+[mia, vincent, jules, yolanda]
+
+[mia, robber(honey_bunny), X, 2, mia]
+
+[]
+
+[mia, [vincent, jules], [butch, girlfriend(butch)]]
+
+[[], dead(zed), [2, [b, chopper]], [], Z, [2, [b, chopper]]]
+
+```
 
 - ÁTOMOS<br>
 Constantes de texto são introduzidas usando átomos. Um átomo é uma sequência consistindo de letras, sublinhados e sublinhados , mas começando com uma letra minúscula. Se um átomo não alfanumérico for necessário, qualquer sequência de aspas simples pode ser usada.
@@ -240,6 +253,63 @@ gosta (joão, X) :- gosta (X, vinho), gosta (X, comida).
 filho (X, Y) :- homem (X), genitor(Y, X).
 ```
 
+## Declaração de Metas
+
+Prolog é uma linguagem interpretada e seu interpretador usa como prompt o sinal `?-`. Uma pergunta tem a mesma sintaxe da cauda de uma regra. Ao receber uma pergunta, Prolog trata cada um dos termos dela como metas a serem verificadas contra o banco de dados (descrição do mundo). Se a meta casa com um fato, ela é tida como verdadeira. Dizemos que a meta foi satisfeita. Se a meta casa com a cabeça de uma regra, ela produz submetas para cada termo da cauda da regra. Se uma meta não casa com nenhum fato nem com a cabeça de nenhuma regra, ela falha, ou seja, é considerada falsa. A falha de uma meta desencadeia o backtracking.
+
+## Processo de Inferência
+
+A máquina de inferência do Prolog é capaz de realizar deduções lógicas a partir desta base de conhecimento e produzir conhecimento novo. Considere, por exemplo, as seguintes proposições [3]:
+
+```
+1 Todos os homens são mortais. 
+2 Platão é um homem. 
+3 Platão é mortal.
+```
+
+Para a lógica, as duas primeiras proposições são premissas e a terceira é a conclusão lógica destas premissas. Na lógica de predicados de primeira ordem tem-se:
+
+```
+∀X(homem(X) → mortal(X))  (1) 
+Homem (platao)  (2) 
+Mortal (platao) (3) 
+```
+
+Onde a terceira fórmula seria facilmente obtida a partir das duas primeiras usando qualquer ferramenta lógica de dedução, como por exemplo a regra da resolução.
+
+Toda implicação da lógica da forma a → b, equivalente a ¬a ∨ b, gera uma regra Prolog da forma b :- a. 
+
+Logo, um programa Prolog para esta base de conhecimento seria:
+
+```
+Mortal (X) :- homem(X). 
+Homem (platão).
+```
+
+A partir deste programa, ao se perguntar se mortal (platão) é verdadeiro, a máquina de inferência do Prolog responde que sim (yes).
+
+## CAbeça e cauda
+
+Uma lista não-vazia pode ser pensada como tendo duas partes:
+- o	cabeça (head): primeiro elemento da lista
+- o	cauda (tail): lista que sobra quando retiramos a cabeça
+
+## Aplicações
+
+Atualmente, o Prolog é utilizado em diversas aplicações na área de computação simbólica, incluindo-se aí: bases de dados relacionais, sistemas especialistas, lógica matemática, prova automática de teoremas, resolução de problemas abstratos e geração de planos, processamento de linguagem natural, projeto de arquiteturas, logística, resolução de equações simbólicas, construção de compiladores, análise bioquímica e projeto de fármacos.
+
+## Principais aplicações
+
+- Principais aplicações se dão na área de computação simbólica:
+- Lógica matemática, prova automática de teoremas e semântica;
+- Solução de equações simbólicas;
+- Bancos de dados relacionais;
+- Linguagem Natural;
+- Sistemas Especialistas;
+- Planejamento Automático de Atividades;
+- Aplicações de "General Problem Solving", como jogos (Xadrez, Damas, Jogo da Velha, etc.);
+- Compiladores;
+- Análise Bioquímica e projetos de novas drogas.
 
 ## Referências
 
@@ -251,5 +321,8 @@ MC346 - Paradigmas de programação Prolog. [S. l.], 2017. Disponível em: https
 
 PROLOG. [S. l.]. Disponível em: http://www2.unemat.br/rhycardo/download/apostila_de_prolog.pdf. Acesso em: 9 ago. 2022.
 
+NOTAS de Aula - Prolog. [S. l.]. Disponível em: https://www.ic.unicamp.br/~meidanis/courses/mc600/200002/Prolog/aulas.html. Acesso em: 9 ago. 2022.
 
+PROLOG: listas. [S. l.]. Disponível em: https://rodrigorgs.github.io/aulas/mata56/aula06-prolog-listas. Acesso em: 9 ago. 2022.
 
+PROLOG. [S. l.]. Disponível em: https://ww2.inf.ufg.br/~eduardo/lp/alunos/prolog/prolog.html. Acesso em: 9 ago. 2022.

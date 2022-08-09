@@ -47,6 +47,26 @@ No Prolog as variareis são tratadas como incógnitas das quais o valor é desco
 - ÁTOMOS<br>
 Constantes de texto são introduzidas usando átomos. Um átomo é uma sequência consistindo de letras, sublinhados e sublinhados , mas começando com uma letra minúscula. Se um átomo não alfanumérico for necessário, qualquer sequência de aspas simples pode ser usada.
 
+- NUMEROS<br>
+Um número é uma sequência de dígitos que permite também os sinais de .(para números reais), -(número negativo) e e (notação científica). Algumas das implementações do Prolog não fazem distinção entre inteiros e números reais.
+
+
+- ENTRADA E SAIDA<br>
+Assim como em outras linguagens, o Prolog também dispõe propriedades de entrada e saída de dados, são eles read() e write().
+
+```
+Ex:read(Termo)
+onde ?Termo (variável ou átomo)
+Lê um termo do dispositivo de entrada
+corrente e unifica com Termo
+
+write(Termo)
+onde ?Termo (termo)
+Escreve o termo no dispositivo de saída
+corrente
+```
+
+
 
 
 

@@ -211,7 +211,8 @@ Os fatos são os elementos fundamentais da programação em Prolog, pois determi
 
 Características dos fatos: 
 - Os nomes dos predicados e dos objetos devem começar com letra minúscula. Por exemplo: joão, casa, gosta. 
-- Os predicados são escritos primeiro e os objetos são escritos depois, separados por vírgulas. • Os objetos são escritos dentro de parênteses.
+- Os predicados são escritos primeiro e os objetos são escritos depois, separados por vírgulas.
+- Os objetos são escritos dentro de parênteses.
 - Todo fato é terminado com um ponto final. 
 - A ordem dos objetos é importante: gosta (maria, josé). ≠ gosta (josé, maria). 
 - Uma coleção de fatos é chamada de “banco de conhecimento” ou “banco de dados”. 

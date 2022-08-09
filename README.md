@@ -4,7 +4,7 @@ Estudo de caso desenvolvido para apresentação na materia de LP
 
 Prolog é uma linguagem de programação que se enquadra no paradigma de Programação em Lógica Matemática. É uma linguagem de uso geral que é especialmente associada com a inteligência artificial e linguística computacional. Consiste numa linguagem puramente lógica, que pode ser chamada de Prolog puro, e numa linguagem concreta, a qual acrescenta o Prolog puro com componentes extra-lógico.
 
-## 📌Histórico 
+## Histórico 
 A linguagem de programação Prolog nasceu de um projeto que não focava em implementações de linguagens de programação, mas sim em processamento de linguagem natural. Na Universidade de Marselha, Alain Colmerauer e Robert Pasero trabalharam na parte da linguagem natural, e Jean Trudel e Philippe Roussel trabalharam na parte dedutiva do projeto. Trudel, interessado em métodos de resolução de SL, convenceu um de seus inventores, Robert Kowalski, a participar do projeto. O projeto produziu uma versão preliminar da linguagem Prolog no final de 1971, com a versão final aparecendo no final de 1972.
 
 ## Características 
@@ -30,7 +30,7 @@ predicado(argumento1,argumento2...).
 
 Ex: Cidade(Cascavel)
 ```
-- QUESTOES<br>
+- QUESTÕES<br>
 Questão é um fato antecedido de um ponto de interrogação ou o comando apropriado para o tipo de compilador.<br>
 
 ```
@@ -38,7 +38,7 @@ Por exemplo: ?-Cidade(cascavel).
 ```
 A partir de uma questão feita o Prolog realiza uma busca procurando por uma ocorrencia que seja igual a questão e retornando assim `YES` ou `NO`
 
-- VARIAVEIS<br>
+- VARIÁVEIS<br>
 No Prolog as variareis são tratadas como incógnitas das quais o valor é desconhecido, portando devemos instanciar um objeto a essa variável e a mesma não poderá ser mais modificada
 
 - LISTAS<br>
@@ -60,11 +60,11 @@ Uma lista é uma sequência finita de elementos. Ex.:
 - ÁTOMOS<br>
 Constantes de texto são introduzidas usando átomos. Um átomo é uma sequência consistindo de letras, sublinhados e sublinhados , mas começando com uma letra minúscula. Se um átomo não alfanumérico for necessário, qualquer sequência de aspas simples pode ser usada.
 
-- NUMEROS<br>
+- NÚMEROS<br>
 Um número é uma sequência de dígitos que permite também os sinais de .(para números reais), -(número negativo) e e (notação científica). Algumas das implementações do Prolog não fazem distinção entre inteiros e números reais.
 
 
-- ENTRADA E SAIDA<br>
+- ENTRADA E SAÍDA<br>
 Assim como em outras linguagens, o Prolog também dispõe propriedades de entrada e saída de dados, são eles read() e write().
 
 ```
@@ -288,7 +288,7 @@ Homem (platão).
 
 A partir deste programa, ao se perguntar se mortal (platão) é verdadeiro, a máquina de inferência do Prolog responde que sim (yes).
 
-## CAbeça e cauda
+## Cabeça e cauda
 
 Uma lista não-vazia pode ser pensada como tendo duas partes:
 - o	cabeça (head): primeiro elemento da lista

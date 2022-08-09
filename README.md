@@ -155,12 +155,53 @@ X = Y = a
 - Do lado direito as variável em que apareçam devem estar instanciadas.
 - Em PROLOG N is N+1 nunca tem sucesso.
 
+### Laços de repetição
 
+Na sintaxe da linguagem não há laços do tipo "for" ou "while" (apesar de poderem ser facilmente programados), simplesmente porque eles são absolutamente desnecessários.
 
+## Funções
 
+Uma função é um nome de função seguido por uma lista de termos entre parênteses, onde um nome de função tem a forma de um átomo não numérico:
 
+```
+Autor_de(scott)
 
+f(x,y,z)
 
+“oi!”(pedro)
+```
+
+## Paradigma funcional
+
+- Baseado em declaração e aplicação de funções (cálculo lambda) 
+- Todos os parâmetros de uma função precisam estar instanciados 
+- Clara distinção entre entrada e saída
+
+## Termos: Constante, variável e estrutura
+
+Um termo pode ser uma constante, uma variável, ou uma estrutura.
+
+- As constantes podem ser átomos ou números. Quem conhece LISP notará uma diferença aqui: os números são considerados átomos em LISP, mas em Prolog números não são átomos (embora ambos sejam constantes).
+- Um átomo indica um objeto ou uma relação. Nomes de objetos como maria, livro, etc. são átomos. Nomes de átomos sempre começam com letra minúscula. Nomes de predicados são sempre atômicos também. Os grupos de caracteres `?-` (usado em perguntas) e `:-` (usado em regras) são também átomos. Átomos de comprimento igual a um são os caracteres, que podem ser lidos e impressos em Prolog, como veremos no capítulo sobre entrada e saída.
+- Sintaticamente, as variáveis têm nomes cujo primeiro caractere é uma letra maiúscula ou o sinal de sublinhado (underscore) `_`. Estas últimas são chamadas de variáveis anônimas. 
+- Variáveis com o mesmo nome aparecendo numa mesma cláusula são a mesma variável, ou seja, se uma ganha um valor, este valor passa imediatamente para as outras ocorrências, exceto para variáveis anônimas. As variáveis anônimas são diferentes das outras nos seguintes aspectos: (1) cada ocorrência delas indica uma variável diferente, mesmo dentro de uma mesma cláusula, e (2) ao serem usadas numa pergunta, seus valores não são impressos nas respostas. Variáveis anônimas são usadas quando queremos que unifiquem com qualquer termo, mas não nos interessa com qual valor serão instanciadas.
+- As estruturas são termos mais complexos formados por um funtor seguido de componentes separadas por vírgula e colocadas entre parênteses. Por exemplo, para indicar um livro com seu título e autor podemos usar a estrutura abaixo: 
+
+```
+livro(incidente_em_antares, verissimo).
+```
+
+Observe que os fatos de um banco de dados em Prolog são estruturas seguidas de um ponto final. 
+
+- Estruturas podem ser aninhadas. Se quisermos sofisticar a indicação dos livros, colocando nome e sobrenome do autor para poder diferenciar entre vários autores com o mesmo sobrenome, podemos usar: 
+
+```
+livro(incidente_em_antares, autor(erico, verissimo)). 
+```
+- Estruturas podem ser argumentos de fatos no banco de dados: 
+```
+pertence(ze, livro(incidente_em_antares, verissimo)).
+```
 
 
 
@@ -169,4 +210,7 @@ X = Y = a
 PROLOG: aritmética. [S. l.]. Disponível em: https://rodrigorgs.github.io/mata56-20161/aula05-prolog-aritmetica.html. Acesso em: 9 ago. 2022.
 
 ALGORITMIA_AVANÇADA_TP_PROLOG v2. [S. l.]. Disponível em: https://www.dei.isep.ipp.pt/~jtavares/ALGAV/downloads/ALGAV_TP_aula4.pdf. Acesso em: 9 ago. 2022.
+
+MC346 - Paradigmas de programação Prolog. [S. l.], 2017. Disponível em: https://www.ic.unicamp.br/~meidanis/courses/mc346/2017s2/prolog/apostila-prolog.pdf. Acesso em: 9 ago. 2022.
+
 

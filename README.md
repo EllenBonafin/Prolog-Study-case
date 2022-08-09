@@ -203,6 +203,41 @@ livro(incidente_em_antares, autor(erico, verissimo)).
 pertence(ze, livro(incidente_em_antares, verissimo)).
 ```
 
+## Declaração de Fatos
+
+Os fatos são os elementos fundamentais da programação em Prolog, pois determinam as relações que existem entre os objetos conhecidos. Exemplo: 
+
+![exemplo1](./folder/exemplo1.png)
+
+Características dos fatos: 
+- Os nomes dos predicados e dos objetos devem começar com letra minúscula. Por exemplo: joão, casa, gosta. 
+- Os predicados são escritos primeiro e os objetos são escritos depois, separados por vírgulas. • Os objetos são escritos dentro de parênteses.
+- Todo fato é terminado com um ponto final. 
+- A ordem dos objetos é importante: gosta (maria, josé). ≠ gosta (josé, maria). 
+- Uma coleção de fatos é chamada de “banco de conhecimento” ou “banco de dados”. 
+- Os fatos podem ter um número arbitrário de objetos como argumento.
+
+## Declaração de Regras
+
+As regras são utilizadas para construir relações entre fatos, explicitando as dependências entre eles.
+
+Ao contrário dos fatos, que são incondicionais, as regras especificam coisas que podem ser verdadeiras se algumas condições forem satisfeitas. 
+
+As regras possuem duas partes: 
+- o corpo, que define as condições e se encontra na parte direita da regra, e 
+- a cabeça, que define a conclusão, e se encontra na parte esquerda da regra.
+
+A cabeça e o corpo são separados pelo símbolo `:-`, que é lido como “se”. 
+
+Uma regra sempre é terminada com um ponto final.
+
+```
+gosta (joão, X) :- gosta (X, vinho).
+
+gosta (joão, X) :- gosta (X, vinho), gosta (X, comida).
+
+filho (X, Y) :- homem (X), genitor(Y, X).
+```
 
 
 ## Referências
@@ -212,5 +247,8 @@ PROLOG: aritmética. [S. l.]. Disponível em: https://rodrigorgs.github.io/mata5
 ALGORITMIA_AVANÇADA_TP_PROLOG v2. [S. l.]. Disponível em: https://www.dei.isep.ipp.pt/~jtavares/ALGAV/downloads/ALGAV_TP_aula4.pdf. Acesso em: 9 ago. 2022.
 
 MC346 - Paradigmas de programação Prolog. [S. l.], 2017. Disponível em: https://www.ic.unicamp.br/~meidanis/courses/mc346/2017s2/prolog/apostila-prolog.pdf. Acesso em: 9 ago. 2022.
+
+PROLOG. [S. l.]. Disponível em: http://www2.unemat.br/rhycardo/download/apostila_de_prolog.pdf. Acesso em: 9 ago. 2022.
+
 
 

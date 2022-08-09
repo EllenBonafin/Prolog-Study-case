@@ -65,8 +65,108 @@ onde ?Termo (termo)
 Escreve o termo no dispositivo de saída
 corrente
 ```
+## Operadores
+
+### Operador `is`
+
+O operador binário `is` é similar ao operador de unificação, `=`, com uma diferença: o lado direito (e apenas o lado direito) é interpretado como uma expressão aritmética e seu resultado é calculado antes da unificação. Exemplos:
+
+```
+X is 1 + 2.
+3 is 1 + 2.
+```
+
+A segunda consulta retorna `true` porque o lado direito do operador `is` é avaliado como expressão aritmética, resultando no valor `3`, e `3` (lado esquerdo) pode ser unificado com `3` (lado direito). Contra-exemplo:
+
+```
+1 + 2 is 3.
+```
+
+O último exemplo não funciona porque o lado esquerdo do `is` não é avaliado como expressão aritmética. Ao tentar unificar `+(1, 2)` com `3`, a unificação falha.
+
+### Operadores aritméticos
+
+O Prolog possui os operadores mais comuns, como `+`, `-`, `*`, `/`, `abs`, `sin`, `cos`, `tan`, `exp`, `ln`, `sqrt`, dentre outros. A precedência entre operadores é respeitada. Exemplo:
+
+```
+X is 1 + 2 * 3.
+X is sqrt(9).
+```
+
+Não confunda operadores com predicados! Operadores aritméticos são funções que retornam um número.
+
+### Operadores de comparação (ralacionais)
+
+Prolog admite operadores de comparação, como `>` e `<`. Ao usar um desses operadores, ambos os lados são avaliados como expressão aritmética. Exemplos:
+
+```
+4 > 3. /*true*/
+8 + 1 < 5 + 5. /*true*/
+X is +(8, 1), X < X + 1. /*true*/
+```
+
+Operadores de comparação:
+
+-	`<`: menor que
+-	`>`: maior que
+-	`>=`: maior ou igual a
+-	`=<`: menor ou igual a (a maioria das outras linguagens usa <=)
+-	`=:=`: igual a
+-	`=\=`: diferente de
+
+Note que esses operadores não realizam unificação! Por isso, as variáveis devem estar instanciadas antes de se realizar a comparação. Exemplo:
+
+```
+X =:= 5.
+/* [Error] =:=/2: Arguments are not sufficiently instantiated */
+```
+
+## Sentenças
+
+### Operadores de atribuição
+
+Em PROLOG temos 2 operadores de atribuição:
+
+- `=` para a atribuição ximbólica X=a
+- `is` para a atribuição numérica X is 5
+
+A atribuição simbólica é bidirecional, para X=Y temos: 
+
+- Se X não está instanciado e Y está então temos X←Y 
+- Se X está instanciado e Y não está então temos X→Y
+- Se nenhum está instanciado então passam a ser a mesma variável 
+- Se ambos estão instanciados com o mesmo valor então há sucesso 
+- Se ambos estão instanciados com valores diferentes então ocorre uma falha
+
+```
+?- X=Y,X=a.
+X = Y = a
+
+?- Y=a,X=Y. 
+Y = X = a
+
+?- X=a,X=Y.
+X = Y = a
+```
+
+- A atribuição numérica é unidirecional.
+- Do lado direito do is, se estiverem envolvidas variáveis, elas devem estar instanciadas.
+- Do lado esquerdo a variável não deve estar instanciada, senão ocorre uma falha.
+- Do lado direito as variável em que apareçam devem estar instanciadas.
+- Em PROLOG N is N+1 nunca tem sucesso.
 
 
 
 
+
+
+
+
+
+
+## Referências
+
+PROLOG: aritmética. [S. l.]. Disponível em: https://rodrigorgs.github.io/mata56-20161/aula05-prolog-aritmetica.html. Acesso em: 9 ago. 2022.
+
+ALGORITMIA_AVANÇADA_TP_PROLOG v2. [S. l.]. Disponível em: https://www.dei.isep.ipp.pt/~jtavares/ALGAV/downloads/ALGAV_TP_aula4.pdf. Acesso em: 9 ago. 2022.
 

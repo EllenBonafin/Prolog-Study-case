@@ -15,7 +15,6 @@ Além de ser uma linguagem declarativa, outro fato que a diferencia de outras li
 
 Os programas em Prolog podem ser executados de forma interativa e os usuários podem formular consultas usando fatos e regras, resultando em soluções por meio de um mecanismo unificado.
 
-- ESCOPO<br>
 
 ## Tipos de dados 
 Os tipos de dados comuns em outras linguagens não são usados no Prolog. Todos os dados são tratados como um único tipo, chamado de termo, que pode ser uma constante, variável ou termo composto.
